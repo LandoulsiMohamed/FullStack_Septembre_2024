@@ -3,6 +3,7 @@ package com.sip.ams.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -24,6 +25,13 @@ public class EtudiantController {
 	public String addEtudiant()
 	{
 	 return "addEtudiant";
+	}
+	
+	@RequestMapping("SaveEtudiant")
+	@ResponseBody
+	public String saveEtudiant(@RequestParam("nomEtudiant")String nom)
+	{
+	 return "Vous êtes : " +nom;
 	}
 
 }
