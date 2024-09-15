@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
+@RequestMapping("/etudiants")
 public class EtudiantController {
 	
 	@RequestMapping("list") // route sur navigateur
@@ -17,14 +18,14 @@ public class EtudiantController {
      String trainer = "Amine";
      model.addAttribute("totalStudents", total);
      model.addAttribute("trainerStudents", trainer);
-	 return "listEtudiants"; //nom du fichier(template) View
+	 return "etudiants/listEtudiants"; //nom du fichier(template) View
 	}
 	
 	@RequestMapping("add")
 	//@ResponseBody
 	public String addEtudiant()
 	{
-	 return "addEtudiant";
+	 return "etudiants/addEtudiant";
 	}
 	
 	@RequestMapping("SaveEtudiant")
