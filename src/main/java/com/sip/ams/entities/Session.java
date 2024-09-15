@@ -13,6 +13,10 @@ public class Session {
 		this.description = description;
 	}
 	
+	public Session() {
+		super();
+	}
+	
 	public String getTitre() {
 		return titre;
 	}

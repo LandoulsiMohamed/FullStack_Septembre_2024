@@ -6,7 +6,10 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.sip.ams.entities.Session;
 
@@ -34,9 +37,21 @@ public class SessionController {
 		return "sessions/listSessions";
 	}
 	
-	public String addSession() {
-		
-		return "";
+	@GetMapping("/showAddSessionForm")
+	public String addSession(Model model) {
+		//Session temp = new Session("a","b","c");
+		Session temp = new Session();
+		model.addAttribute("temp",temp);
+		return "sessions/addSession";
+	}
+	
+	@PostMapping("/saveSession")
+	//@ResponseBody
+	public String saveSession(Session temp) {
+		temp.setLogo("oca.png");
+		sessions.add(temp);
+		//return temp.toString();
+		return "redirect:list";
 	}
 
 }

@@ -1,7 +1,9 @@
 <div th:replace="fragments/header::header"></div>
 <h1 align="center">Liste des sessions</h1>
 
-<div class="container text-center">
+Pour ajouter une nouvelle session cliquer <a class="btn btn-primary" th:href="@{/sessions/showAddSessionForm}"> ici </a>
+
+<div class="container text-center" style="margin-top:1%">
   <div class="row">
     <div class="col"  th:each="sip_session: ${sessions}">
 		<div class="card" style="width: 18rem;">
