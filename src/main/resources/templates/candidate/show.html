@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<div th:replace="fragments/header::header"></div>
+</head>
+<body>
+	<h1 align="center">Détails Candidat</h1>
+	<h3>
+		Id : <span th:text="${candidate.id}"></span>
+	</h3>
+	<h3>
+		Nom : <span th:text="${candidate.name}"></span>
+	</h3>
+	<h3>
+		Email : <span th:text="${candidate.email}"></span>
+	</h3>
+	<h3>
+		Adresse : <span th:text="${candidate.adress}"></span>
+	</h3>
+	<div th:replace="fragments/footer::footer"></div>
+</body>
+</html>
